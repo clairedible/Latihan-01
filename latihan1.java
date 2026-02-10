@@ -31,7 +31,11 @@ class bujurSangkar extends bidangDuaDimensi{
     }
 
     void setSisi(int sisi){
-        this.sisi = sisi;
+        if (sisi > 0){
+            this.sisi = sisi;
+        }else {
+            System.out.println("Sisi harus lebih besar dari 0");
+        }
     }
 
     @Override
@@ -62,20 +66,19 @@ class lingkaran extends bidangDuaDimensi{
     }
 
     void setDiameter(int diameter){
-        this.diameter = diameter;
+        if (diameter > 0){
+            this.diameter = diameter;
+        }else {
+            System.out.println("Diameter harus lebih besar dari 0");
+        }
     }
 
     @Override
     int luas(){
         double luas;
         double r = this.diameter / 2.0;
-
-        if (this.diameter % 7 == 0){
-            luas = (22.0/7.0)*r*r;
-        }else{
-            luas = 3.14*r*r;
-        }
-        Math.round(luas);
+        luas = Math.PI*r*r;
+        luas = Math.round(luas);
         return (int)luas;
     }
 
